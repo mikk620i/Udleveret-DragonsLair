@@ -5,6 +5,7 @@ namespace TournamentLib
     public class Round
     {
         private List<Match> matches = new List<Match>();
+        private Match match = new Match();
         
         public void AddMatch(Match m)
         {
@@ -19,20 +20,27 @@ namespace TournamentLib
 
         public bool IsMatchesFinished()
         {
-            // TODO: Implement this method
-            return false;
+            return true;
         }
 
         public List<Team> GetWinningTeams()
         {
-            // TODO: Implement this method
-            return null;
+            List<Team> winningTeams = new List<Team>();
+            for (int i = 0; i < matches.Count; i++)
+            {
+                winningTeams.Add(match.Winner);
+            }
+            return winningTeams;
         }
 
         public List<Team> GetLosingTeams()
         {
-            // TODO: Implement this method
-            return null;
+            List<Team> losingTeams = new List<Team>();
+            for (int i = 0; i < matches.Count; i++)
+            {
+                losingTeams.Add(match.Winner);
+            }
+            return losingTeams;
         }
     }
 }
